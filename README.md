@@ -99,8 +99,7 @@ Nota. pronto en maven repo
         
         try {
             validate = sign.extract(valid, type);
-            if (validate.getData().get("idtienda") == current.getIdTienda()
-                    && current != null
+            if (current != null
                     && validate.getUser() == current.getUser()
                     && validate.getData().get("idventa") == detalleventa.getIdVenta()) {
                 // aca hariamos la accion de persistir
