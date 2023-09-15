@@ -1,6 +1,7 @@
 package org.osbo.core.datasealguard.validate;
 
 import com.auth0.jwt.interfaces.DecodedJWT;
+import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
@@ -20,7 +21,7 @@ import static org.osbo.core.datasealguard.type.TypeSign.JWT;
  *
  * @author programmercito
  */
-public class SignerDataValidate<T>{
+public class SignerDataValidate<T> {
 
     private TypeSign type;
     private int timeexpire;
@@ -40,7 +41,17 @@ public class SignerDataValidate<T>{
         return token;
     }
 
-    public T  extract(String token, Type classOfT) throws InvalidSignException {
+    public ValidateObject<Long, Long> extract(String token) throws InvalidSignException {
+        ValidateObject<Long, Long> validate = new ValidateObject<Long, Long>();
+        Type type = new TypeToken<ValidateObject<Long, Long>>() {
+        }.getType();
+        SignerDataValidate<ValidateObject<Long, Long>> sign = new SignerDataValidate<ValidateObject<Long, Long>>();
+        sign.setType(this.getType())
+                .setSecret(this.getSecret());
+        return sign.extract(token, type);
+    }
+
+    public T extract(String token, Type classOfT) throws InvalidSignException {
         T fromJson = null;
         switch (getType()) {
             case JWT:
