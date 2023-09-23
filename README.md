@@ -14,8 +14,7 @@ Para incluir `DataSealGuard` en tu proyecto, añade la siguiente dependencia a t
 <dependency>
     <groupId>io.github.programmercito</groupId>
     <artifactId>DataSealGuard</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <type>jar</type>
+    <version>1.0.1</version>
 </dependency>
 ```
 Nota. pronto en maven repo
