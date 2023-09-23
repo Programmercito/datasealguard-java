@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"org.osbo.core.datasealguard.exception"},{"l":"org.osbo.core.datasealguard.json"},{"l":"org.osbo.core.datasealguard.pojo"},{"l":"org.osbo.core.datasealguard.sign"},{"l":"org.osbo.core.datasealguard.type"},{"l":"org.osbo.core.datasealguard.validate"}];updateSearchResults();
